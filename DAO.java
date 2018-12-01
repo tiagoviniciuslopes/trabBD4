@@ -10,9 +10,11 @@ public class DAO {
 		Rua rua = new Rua();
 		Bairro bairro = new Bairro();
 		Estado estado = new Estado();
+		Hidrometro hidrometro = new Hidrometro();
 		
 		ArrayList<Email> emails = new ArrayList<Email>();
-		ArrayList<Telefone> telefones = new ArrayList<Telefones>();
+		ArrayList<Telefone> telefones = new ArrayList<Telefone>();
+		ArrayList<Fatura> faturas = new ArrayList<Fatura>();
 		int i =0;
 		
 		SQLConnector connector = new SQLConnector();
@@ -23,7 +25,7 @@ public class DAO {
 			Telefone telefone = new Telefone();
 			Email email = new Email();
 			Fatura fatura = new Fatura();
-			Hidrometro hidrometro = new Hidrometro();
+			
 			if(i==0) {
 				cliente.setIdCliente(result.getInt("idCliente"));
 				cliente.setDocumentoCliente(result.getString("documentoCliente"));
@@ -41,6 +43,8 @@ public class DAO {
 				bairro.setNomeBairro(result.getString("nomeBairro"));
 				rua.setIdRua(result.getInt("idRua"));
 				rua.setNomeRua(result.getString("nomeRua"));
+				hidrometro.setIdHidrometro(result.getInt("idHidrometro"));
+				hidrometro.setRegistroHidrometro(result.getString("registroHidrometro"));
 				i++;
 			}
 			
@@ -48,8 +52,7 @@ public class DAO {
 			telefone.setNumeroTelefone(result.getString("numeroTelefone"));
 			email.setIdEmail(result.getInt("idEmail"));
 			email.setEnderecoEmail(result.getString("enderecoEmail"));
-			hidrometro.setIdHidrometro(result.getInt("idHidrometro"));
-			hidrometro.setRegistroHidrometro(result.getString("registroHidrometro"));
+			
 			fatura.setIdFatura(result.getInt("idFatura"));
 			fatura.setCustoEsgoto(result.getFloat("custoEsgoto"));
 			fatura.setCustoMetroCubico(result.getFloat("custoMetroCubico"));
@@ -82,7 +85,7 @@ public class DAO {
 		hidrometro.setEnderecoEspecifico(enderecoEspecifico);
 		cliente.setTelefones(telefones);
 		cliente.setEmails(emails);
-		cliente.setHidrometros(hidrometros);
+		cliente.setHidrometro(hidrometro);
 		
 		connector.close();
 		return cliente;

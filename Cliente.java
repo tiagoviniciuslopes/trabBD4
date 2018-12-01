@@ -39,12 +39,6 @@ public class Cliente {
 	public void setNomeCliente(String nomeCliente) {
 		this.nomeCliente = nomeCliente;
 	}
-	public Fatura getFatura() {
-		return fatura;
-	}
-	public void setFatura(Fatura fatura) {
-		this.fatura = fatura;
-	}
 	public int getIdCliente() {
 		return idCliente;
 	}
