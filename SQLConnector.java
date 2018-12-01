@@ -13,7 +13,7 @@ public class SQLConnector {
 	public SQLConnector() throws Exception {
 		String url = "jdbc:mysql://127.0.0.1/sanepar?autoReconnect=true&useSSL=false";
 		String usuario = "root";
-		String senha = "";
+		String senha = "bancodedados";
 		Class.forName("com.mysql.jdbc.Driver");
 		connection = DriverManager.getConnection(url, usuario, senha);
 		statement = connection.createStatement();

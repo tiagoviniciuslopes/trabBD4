@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="WB Datadict">
+  <meta name="description" content="sanepar Data Dictionary.">
+  <title>sanepar Data Dictionary</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+    // Highlight table corresponding to the current fragment in the URL.
+    $(document).ready(function(){
+      $("a").click(function() {
+        var elem = $(this);
+        // Remove all classes from tables.
+        $("table").removeClass( "focused" )
+        // Get a.href value and extract its fragment id.
+        var id = elem.attr("href");
+        // Highlight table using fragment id.
+        $(id).addClass( "focused" );
+      });
+    });
+  </script>
+  <style type="text/css">
+    a {
+        text-decoration: none;
+    }
+    abbr {
+        cursor: help;
+    }
+    header {
+        color: #6A6A6A;
+        text-align: right;
+    }
+    table {
+        border-collapse: collapse;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    table caption {
+        font-size: 120%;
+        font-weight: bold;
+    }
+    table, td, th {
+        border-color: silver;
+        border-style: solid;
+        border-width: 1px;
+    }
+    caption {
+        color: black;
+    }
+    td, th {
+        padding: 1em;
+    }
+    tr:hover {
+        color: #333;
+        background-color: #F2F2F2;
+    }
+    th {
+        background-color: #F5F5F5;
+    }
+    td {
+        color: #6A6A6A;
+    }
+    ul {
+        font-style: italic;
+    }
+    .centered {
+        text-align: center;
+    }
+    .field {
+        color: #4C4C4C;
+        font-weight: bold;
+    }
+    .focused {
+        outline-color: aqua;
+        outline-style: solid;
+        outline-width: thin;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>sanepar<br> Data Dictionary</h1>
+    <p>
+      <em>2018-12-01</em>
+    </p>
+    <p>
+      <em></em>
+    </p>
+  </header>
+
+  <nav><h2>Index</h2><ul><li><a href='#bairro'>bairro</a></li><li><a href='#cidade'>cidade</a></li><li><a href='#cliente'>cliente</a></li><li><a href='#email'>email</a></li><li><a href='#endereco'>endereco</a></li><li><a href='#enderecoEspecifico'>enderecoEspecifico</a></li><li><a href='#estado'>estado</a></li><li><a href='#fatura'>fatura</a></li><li><a href='#hidrometro'>hidrometro</a></li><li><a href='#rua'>rua</a></li><li><a href='#telefone'>telefone</a></li></ul></nav>
+
+  <div>
+   <table id='bairro'>
+      <caption>bairro</caption>
+      <tr>
+         <td colspan='12'></td>
+      </tr>
+      <tr>
+         <th>Column name</th>
+         <th>DataType</th>
+         <th><abbr title='Primary Key'>PK</abbr></th>
+         <th><abbr title='Foreign Key'>FK</abbr></th>
+         <th><abbr title='Not Null'>NN</abbr></th>
+         <th><abbr title='Unique'>UQ</abbr></th>
+         <th><abbr title='Binary'>BIN</abbr></th>
+         <th><abbr title='Unsigned'>UN</abbr></th>
+         <th><abbr title='Zero Fill'>ZF</abbr></th>
+         <th><abbr title='Auto Increment'>AI</abbr></th>
+         <th>Default</th>
+         <th>Comment</th>
+      </tr>
+      <tr>
+         <td class='field'>idBairro</td>
+         <td>INT</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>nomeBairro</td>
+         <td>VARCHAR(45)</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+   </table>
+   <table id='cidade'>
+      <caption>cidade</caption>
+      <tr>
+         <td colspan='12'></td>
+      </tr>
+      <tr>
+         <th>Column name</th>
+         <th>DataType</th>
+         <th><abbr title='Primary Key'>PK</abbr></th>
+         <th><abbr title='Foreign Key'>FK</abbr></th>
+         <th><abbr title='Not Null'>NN</abbr></th>
+         <th><abbr title='Unique'>UQ</abbr></th>
+         <th><abbr title='Binary'>BIN</abbr></th>
+         <th><abbr title='Unsigned'>UN</abbr></th>
+         <th><abbr title='Zero Fill'>ZF</abbr></th>
+         <th><abbr title='Auto Increment'>AI</abbr></th>
+         <th>Default</th>
+         <th>Comment</th>
+      </tr>
+      <tr>
+         <td class='field'>idCidade</td>
+         <td>INT</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>nomeCidade</td>
+         <td>VARCHAR(45)</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>idEstado</td>
+         <td>INT</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'><a href='#idEstado'>&#10004;</a></td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+   </table>
+   <table id='cliente'>
+      <caption>cliente</caption>
+      <tr>
+         <td colspan='12'></td>
+      </tr>
+      <tr>
+         <th>Column name</th>
+         <th>DataType</th>
+         <th><abbr title='Primary Key'>PK</abbr></th>
+         <th><abbr title='Foreign Key'>FK</abbr></th>
+         <th><abbr title='Not Null'>NN</abbr></th>
+         <th><abbr title='Unique'>UQ</abbr></th>
+         <th><abbr title='Binary'>BIN</abbr></th>
+         <th><abbr title='Unsigned'>UN</abbr></th>
+         <th><abbr title='Zero Fill'>ZF</abbr></th>
+         <th><abbr title='Auto Increment'>AI</abbr></th>
+         <th>Default</th>
+         <th>Comment</th>
+      </tr>
+      <tr>
+         <td class='field'>idCliente</td>
+         <td>INT</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>nomeCliente</td>
+         <td>VARCHAR(45)</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>documentoCliente</td>
+         <td>VARCHAR(45)</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>pessoaJuridica</td>
+         <td>TINYINT</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+   </table>
+   <table id='email'>
+      <caption>email</caption>
+      <tr>
+         <td colspan='12'></td>
+      </tr>
+      <tr>
+         <th>Column name</th>
+         <th>DataType</th>
+         <th><abbr title='Primary Key'>PK</abbr></th>
+         <th><abbr title='Foreign Key'>FK</abbr></th>
+         <th><abbr title='Not Null'>NN</abbr></th>
+         <th><abbr title='Unique'>UQ</abbr></th>
+         <th><abbr title='Binary'>BIN</abbr></th>
+         <th><abbr title='Unsigned'>UN</abbr></th>
+         <th><abbr title='Zero Fill'>ZF</abbr></th>
+         <th><abbr title='Auto Increment'>AI</abbr></th>
+         <th>Default</th>
+         <th>Comment</th>
+      </tr>
+      <tr>
+         <td class='field'>idEmail</td>
+         <td>INT</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>enderecoEmail</td>
+         <td>VARCHAR(45)</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>idCliente</td>
+         <td>INT</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'><a href='#idCliente'>&#10004;</a></td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+   </table>
+   <table id='endereco'>
+      <caption>endereco</caption>
+      <tr>
+         <td colspan='12'></td>
+      </tr>
+      <tr>
+         <th>Column name</th>
+         <th>DataType</th>
+         <th><abbr title='Primary Key'>PK</abbr></th>
+         <th><abbr title='Foreign Key'>FK</abbr></th>
+         <th><abbr title='Not Null'>NN</abbr></th>
+         <th><abbr title='Unique'>UQ</abbr></th>
+         <th><abbr title='Binary'>BIN</abbr></th>
+         <th><abbr title='Unsigned'>UN</abbr></th>
+         <th><abbr title='Zero Fill'>ZF</abbr></th>
+         <th><abbr title='Auto Increment'>AI</abbr></th>
+         <th>Default</th>
+         <th>Comment</th>
+      </tr>
+      <tr>
+         <td class='field'>idEndereco</td>
+         <td>INT</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>idRua</td>
+         <td>INT</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'><a href='#idRua'>&#10004;</a></td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>idCidade</td>
+         <td>INT</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'><a href='#idCidade'>&#10004;</a></td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>idBairro</td>
+         <td>INT</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'><a href='#idBairro'>&#10004;</a></td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+   </table>
+   <table id='enderecoEspecifico'>
+      <caption>enderecoEspecifico</caption>
+      <tr>
+         <td colspan='12'></td>
+      </tr>
+      <tr>
+         <th>Column name</th>
+         <th>DataType</th>
+         <th><abbr title='Primary Key'>PK</abbr></th>
+         <th><abbr title='Foreign Key'>FK</abbr></th>
+         <th><abbr title='Not Null'>NN</abbr></th>
+         <th><abbr title='Unique'>UQ</abbr></th>
+         <th><abbr title='Binary'>BIN</abbr></th>
+         <th><abbr title='Unsigned'>UN</abbr></th>
+         <th><abbr title='Zero Fill'>ZF</abbr></th>
+         <th><abbr title='Auto Increment'>AI</abbr></th>
+         <th>Default</th>
+         <th>Comment</th>
+      </tr>
+      <tr>
+         <td class='field'>idEnderecoEspecifico</td>
+         <td>INT</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>cepEndereco</td>
+         <td>VARCHAR(45)</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>numeroEndereco</td>
+         <td>VARCHAR(45)</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>complemento</td>
+         <td>VARCHAR(80)</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>idEndereco</td>
+         <td>INT</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'><a href='#idEndereco'>&#10004;</a></td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+   </table>
+   <table id='estado'>
+      <caption>estado</caption>
+      <tr>
+         <td colspan='12'></td>
+      </tr>
+      <tr>
+         <th>Column name</th>
+         <th>DataType</th>
+         <th><abbr title='Primary Key'>PK</abbr></th>
+         <th><abbr title='Foreign Key'>FK</abbr></th>
+         <th><abbr title='Not Null'>NN</abbr></th>
+         <th><abbr title='Unique'>UQ</abbr></th>
+         <th><abbr title='Binary'>BIN</abbr></th>
+         <th><abbr title='Unsigned'>UN</abbr></th>
+         <th><abbr title='Zero Fill'>ZF</abbr></th>
+         <th><abbr title='Auto Increment'>AI</abbr></th>
+         <th>Default</th>
+         <th>Comment</th>
+      </tr>
+      <tr>
+         <td class='field'>idEstado</td>
+         <td>INT</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>nomeEstado</td>
+         <td>VARCHAR(45)</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+   </table>
+   <table id='fatura'>
+      <caption>fatura</caption>
+      <tr>
+         <td colspan='12'></td>
+      </tr>
+      <tr>
+         <th>Column name</th>
+         <th>DataType</th>
+         <th><abbr title='Primary Key'>PK</abbr></th>
+         <th><abbr title='Foreign Key'>FK</abbr></th>
+         <th><abbr title='Not Null'>NN</abbr></th>
+         <th><abbr title='Unique'>UQ</abbr></th>
+         <th><abbr title='Binary'>BIN</abbr></th>
+         <th><abbr title='Unsigned'>UN</abbr></th>
+         <th><abbr title='Zero Fill'>ZF</abbr></th>
+         <th><abbr title='Auto Increment'>AI</abbr></th>
+         <th>Default</th>
+         <th>Comment</th>
+      </tr>
+      <tr>
+         <td class='field'>idFatura</td>
+         <td>INT</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>mesFatura</td>
+         <td>INT</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>metrosCubicos</td>
+         <td>INT</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>custoMetroCubico</td>
+         <td>FLOAT</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>esgoto</td>
+         <td>TINYINT</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>custoEsgoto</td>
+         <td>FLOAT</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td>0</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>idHidrometro</td>
+         <td>INT</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'><a href='#idHidrometro'>&#10004;</a></td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>anoFatura</td>
+         <td>INT</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+   </table>
+   <table id='hidrometro'>
+      <caption>hidrometro</caption>
+      <tr>
+         <td colspan='12'></td>
+      </tr>
+      <tr>
+         <th>Column name</th>
+         <th>DataType</th>
+         <th><abbr title='Primary Key'>PK</abbr></th>
+         <th><abbr title='Foreign Key'>FK</abbr></th>
+         <th><abbr title='Not Null'>NN</abbr></th>
+         <th><abbr title='Unique'>UQ</abbr></th>
+         <th><abbr title='Binary'>BIN</abbr></th>
+         <th><abbr title='Unsigned'>UN</abbr></th>
+         <th><abbr title='Zero Fill'>ZF</abbr></th>
+         <th><abbr title='Auto Increment'>AI</abbr></th>
+         <th>Default</th>
+         <th>Comment</th>
+      </tr>
+      <tr>
+         <td class='field'>idHidrometro</td>
+         <td>INT</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>idEnderecoEspecifico</td>
+         <td>INT</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'><a href='#idEnderecoEspecifico'>&#10004;</a></td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>idCliente</td>
+         <td>INT</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'><a href='#idCliente'>&#10004;</a></td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>registroHidrometro</td>
+         <td>VARCHAR(45)</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+   </table>
+   <table id='rua'>
+      <caption>rua</caption>
+      <tr>
+         <td colspan='12'></td>
+      </tr>
+      <tr>
+         <th>Column name</th>
+         <th>DataType</th>
+         <th><abbr title='Primary Key'>PK</abbr></th>
+         <th><abbr title='Foreign Key'>FK</abbr></th>
+         <th><abbr title='Not Null'>NN</abbr></th>
+         <th><abbr title='Unique'>UQ</abbr></th>
+         <th><abbr title='Binary'>BIN</abbr></th>
+         <th><abbr title='Unsigned'>UN</abbr></th>
+         <th><abbr title='Zero Fill'>ZF</abbr></th>
+         <th><abbr title='Auto Increment'>AI</abbr></th>
+         <th>Default</th>
+         <th>Comment</th>
+      </tr>
+      <tr>
+         <td class='field'>idRua</td>
+         <td>INT</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>nomeRua</td>
+         <td>VARCHAR(45)</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+   </table>
+   <table id='telefone'>
+      <caption>telefone</caption>
+      <tr>
+         <td colspan='12'></td>
+      </tr>
+      <tr>
+         <th>Column name</th>
+         <th>DataType</th>
+         <th><abbr title='Primary Key'>PK</abbr></th>
+         <th><abbr title='Foreign Key'>FK</abbr></th>
+         <th><abbr title='Not Null'>NN</abbr></th>
+         <th><abbr title='Unique'>UQ</abbr></th>
+         <th><abbr title='Binary'>BIN</abbr></th>
+         <th><abbr title='Unsigned'>UN</abbr></th>
+         <th><abbr title='Zero Fill'>ZF</abbr></th>
+         <th><abbr title='Auto Increment'>AI</abbr></th>
+         <th>Default</th>
+         <th>Comment</th>
+      </tr>
+      <tr>
+         <td class='field'>idTelefone</td>
+         <td>INT</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>numeroTelefone</td>
+         <td>VARCHAR(15)</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td class='field'>idCliente</td>
+         <td>INT</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'><a href='#idCliente'>&#10004;</a></td>
+         <td class='centered'>&#10004;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td class='centered'>&nbsp;</td>
+         <td></td>
+         <td></td>
+      </tr>
+   </table>
+</div>
+</body>
+</html>
