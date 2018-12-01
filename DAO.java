@@ -4,10 +4,8 @@ import java.util.ArrayList;
 public class DAO {
 	public Cliente consultar(String documentoCliente, String cepEndereco, String numeroEndereco) throws Exception {
 		Cliente cliente = new Cliente();
-		Fatura fatura = new Fatura();
 		Endereco endereco = new Endereco();
 		EnderecoEspecifico enderecoEspecifico = new EnderecoEspecifico();
-		Hidrometro hidrometro = new Hidrometro();
 		Cidade cidade = new Cidade();
 		Rua rua = new Rua();
 		Bairro bairro = new Bairro();
@@ -24,6 +22,8 @@ public class DAO {
 		while (result.next()) {
 			Telefone telefone = new Telefone();
 			Email email = new Email();
+			Fatura fatura = new Fatura();
+			Hidrometro hidrometro = new Hidrometro();
 			if(i==0) {
 				cliente.setIdCliente(result.getInt("idCliente"));
 				cliente.setDocumentoCliente(result.getString("documentoCliente"));
