@@ -4,11 +4,29 @@ import java.util.Date;
 
 public class Fatura {
 	private int idFatura;
-	private String mesFatura;
+	private int mesFatura;
+	private int anoFatura;
+
+	public int getMesFatura() {
+		return this.mesFatura;
+	}
+
+	public void setMesFatura(int mesFatura) {
+		this.mesFatura = mesFatura;
+	}
+
+	public int getAnoFatura() {
+		return this.anoFatura;
+	}
+
+	public void setAnoFatura(int anoFatura) {
+		this.anoFatura = anoFatura;
+	}
 	private int metrosCubicos;
 	private float custoMetroCubico;
 	private boolean esgoto;
 	private float custoEsgoto;
+	
 
 	public int getIdFatura() {
 		return this.idFatura;
@@ -16,14 +34,6 @@ public class Fatura {
 
 	public void setIdFatura(int idFatura) {
 		this.idFatura = idFatura;
-	}
-
-	public String getMesFatura() {
-		return this.mesFatura;
-	}
-
-	public void setMesFatura(String mesFatura) {
-		this.mesFatura = mesFatura;
 	}
 
 	public int getMetrosCubicos() {
