@@ -5,17 +5,17 @@ public class Cliente {
 	private String documentoCliente;
 	private String nomeCliente;
 	private boolean pessoaJuridica;
-	private ArrayList<Hidrometro> hidrometros = new ArrayList<Hidrometro>();
+	private Hidrometro hidrometro = new Hidrometro();
+
+	public Hidrometro getHidrometro() {
+		return this.hidrometro;
+	}
+
+	public void setHidrometro(Hidrometro hidrometro) {
+		this.hidrometro = hidrometro;
+	}
 	private ArrayList<Telefone> telefones = new ArrayList<Telefone>();
 	private ArrayList<Email> emails = new ArrayList<Email>();
-
-	public ArrayList<Hidrometro> getHidrometros() {
-		return this.hidrometros;
-	}
-
-	public void setHidrometros(ArrayList<Hidrometro> hidrometros) {
-		this.hidrometros = hidrometros;
-	}
 
 	public ArrayList<Telefone> getTelefones() {
 		return this.telefones;
