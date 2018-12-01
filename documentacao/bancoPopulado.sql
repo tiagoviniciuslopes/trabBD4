@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 01-Dez-2018 às 01:22
+-- Generation Time: 01-Dez-2018 às 16:34
 -- Versão do servidor: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -184,10 +184,30 @@ CREATE TABLE `fatura` (
 --
 
 INSERT INTO `fatura` (`idFatura`, `mesFatura`, `metrosCubicos`, `custoMetroCubico`, `esgoto`, `custoEsgoto`, `idHidrometro`) VALUES
-(1, 'novembro', 15, 5.96, 1, 4.77, 1),
-(2, 'outubro', 12, 5.96, 1, 4.77, 1),
-(3, 'novembro', 19, 5.96, 0, 0, 2),
-(4, 'outubro', 13, 5.96, 0, 0, 2);
+(1, 'dezembro', 13, 5.96, 1, 4.77, 1),
+(2, 'novembro', 15, 5.96, 1, 4.77, 1),
+(3, 'outubro', 12, 5.96, 1, 4.77, 1),
+(4, 'setembro', 14, 5.96, 1, 4.77, 1),
+(5, 'agosto', 17, 5.96, 1, 4.77, 1),
+(6, 'julho', 11, 5.96, 1, 4.77, 1),
+(7, 'junho', 14, 5.96, 1, 4.77, 1),
+(8, 'maio', 11, 5.96, 1, 4.77, 1),
+(9, 'abril', 13, 5.96, 1, 4.77, 1),
+(10, 'marco', 9, 5.96, 1, 4.77, 1),
+(11, 'fevereiro', 12, 5.96, 1, 4.77, 1),
+(12, 'janeiro', 13, 5.96, 1, 4.77, 1),
+(13, 'dezembro', 11, 5.96, 0, 0, 2),
+(14, 'novembro', 19, 5.96, 0, 0, 2),
+(15, 'outubro', 13, 5.96, 0, 0, 2),
+(16, 'setembro', 12, 5.96, 0, 0, 2),
+(17, 'agosto', 10, 5.96, 0, 0, 2),
+(18, 'julho', 14, 5.96, 0, 0, 2),
+(19, 'junho', 16, 5.96, 0, 0, 2),
+(20, 'maio', 15, 5.96, 0, 0, 2),
+(21, 'abril', 13, 5.96, 0, 0, 2),
+(22, 'marco', 9, 5.96, 0, 0, 2),
+(23, 'fevereiro', 11, 5.96, 0, 0, 2),
+(24, 'janeiro', 13, 5.96, 0, 0, 2);
 
 -- --------------------------------------------------------
 
@@ -384,7 +404,7 @@ ALTER TABLE `estado`
 -- AUTO_INCREMENT for table `fatura`
 --
 ALTER TABLE `fatura`
-  MODIFY `idFatura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idFatura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `hidrometro`
 --

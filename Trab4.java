@@ -89,7 +89,7 @@ public class Trab4 {
 		mes.put("junho", 6);
 		mes.put("julho", 7);
 		mes.put("agosto", 8);
-		mes.put("semtembro", 9);
+		mes.put("setembro", 9);
 		mes.put("outubro", 10);
 		mes.put("novembro", 11);
 		mes.put("dezembro", 12);
