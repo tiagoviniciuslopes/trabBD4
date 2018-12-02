@@ -1,6 +1,8 @@
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import com.sun.org.apache.xalan.internal.xsltc.compiler.sym;
+
 public class DAO {
 	public Cliente consultar(String documentoCliente, String cepEndereco, String numeroEndereco) throws Exception {
 		Cliente cliente = new Cliente();
@@ -94,5 +96,67 @@ public class DAO {
 		connector.close();
 		return cliente;
 	}
-	
+
+	public void cadastrarClienteEmailCommit(String nomeCliente, String documentoCliente, int pj, String email1, String email2) throws Exception {
+		SQLConnector connector = new SQLConnector();
+		String comando;
+
+		comando = "START TRANSACTION;";
+		connector.executeUpdate(comando);
+
+		comando = "INSERT INTO cliente(nomeCliente, documentoCliente, pessoaJuridica) VALUES('"+nomeCliente+"', '"+documentoCliente+"', "+pj+");";
+		connector.executeUpdate(comando);
+
+		comando = "SELECT LAST_INSERT_ID();";
+		ResultSet rs = connector.executeQuery(comando);
+		int count = 0;
+		if(rs.next()){
+			count = rs.getInt("LAST_INSERT_ID()");
+		}
+
+		comando = "INSERT INTO email(enderecoEmail, idCliente) VALUES('"+email1+"',"+count+");";
+		connector.executeUpdate(comando);
+
+		comando = "INSERT INTO email(enderecoEmail, idCliente) VALUES('"+email2+"',"+count+");";
+		connector.executeUpdate(comando);
+		
+		comando = "COMMIT;";
+		connector.executeUpdate(comando);
+
+		connector.close();
+	}
+
+	public void cadastrarClienteEmailRollback(String nomeCliente, String documentoCliente, int pj, String email1, String email2) throws Exception {
+		
+		SQLConnector connector = new SQLConnector();
+		String comando;
+
+		comando = "START TRANSACTION;";
+		connector.executeUpdate(comando);
+
+		comando = "INSERT INTO cliente(nomeCliente, documentoCliente, pessoaJuridica) VALUES('"+nomeCliente+"', '"+documentoCliente+"', "+pj+");";
+		connector.executeUpdate(comando);
+
+		comando = "SELECT LAST_INSERT_ID();";
+		ResultSet rs = connector.executeQuery(comando);
+		int count = 0;
+		if(rs.next()){
+			count = rs.getInt("LAST_INSERT_ID()");
+		}
+
+		comando = "INSERT INTO email(enderecoEmail, idCliente) VALUES('"+email1+"',"+count+");";
+		connector.executeUpdate(comando);
+
+		count += 100000;
+		
+		comando = "INSERT INTO email(enderecoEmail, idCliente) VALUES('"+email2+"',"+count+");";
+		connector.executeUpdate(comando);
+
+		comando = "COMMIT;";
+		connector.executeUpdate(comando);
+
+		connector.close();
+
+	}
+
 }
